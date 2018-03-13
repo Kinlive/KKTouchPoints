@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KKTouchPoints'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A support button/buttons on view, it can drag and tap.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.source_files = 'Pod/Classes/**/*'
+  s.swift_version = '4.0'
   
   
   # s.resource_bundles = {
