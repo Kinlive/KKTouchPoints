@@ -21,16 +21,16 @@ Pod::Spec.new do |s|
 一個客製化的UIView,繼承TouchPoints類別,於初始化時給予想要呈現幾個按鈕的數量以及按鈕title,即可呈現輔助按鈕於視圖上.
                        DESC
 
-  s.homepage         = 'https://github.com/${USER_NAME}/${POD_NAME}'
+  s.homepage         = 'https://github.com/Kinlive/KKTouchPoints.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
-  s.source           = { :git => 'https://github.com/${USER_NAME}/${POD_NAME}.git', :tag => s.version.to_s }
+  s.author           = { 'Kinlive' => 'se771212@gmail.com' }
+  s.source           = { :git => 'https://github.com/Kinlive/KKTouchPoints.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = '${POD_NAME}/Classes/**/*'
+  s.source_files = 'Pod/Classes/**/*'
   
   # s.resource_bundles = {
   #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
