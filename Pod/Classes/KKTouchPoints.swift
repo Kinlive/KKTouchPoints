@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol TouchPointViewDelegates: class {
+@objc public protocol TouchPointViewDelegates: class {
   
   func emptyFunction1()
   
@@ -31,16 +31,16 @@ import UIKit
 }
 
 
-class TouchPointView: UIView {
+public class TouchPointView: UIView {
   enum PointState {
     case open
     case close
   }
 
   //MARK: - Delegate func for give which button's action.
-  var delegate: TouchPointViewDelegates?
+  public var delegate: TouchPointViewDelegates?
   //MARK: - Will put on where superViewController.
-  var superViewController: UIViewController!
+  public var superViewController: UIViewController!
 
   private var howMuchPoints: Int = 5
   private var pointsNames: [String] = ["后退", "清除\n缓存", "首页", "刷新", "前进"]
@@ -53,21 +53,21 @@ class TouchPointView: UIView {
   private var ignoreDrag = false
 
   //MARK: - Change  center point's color.
-  var pointColor = UIColor.gray.withAlphaComponent(0.7)
+  public var pointColor = UIColor.gray.withAlphaComponent(0.7)
   
   //MARK: - Change center point's border color.
-  var borderColor: CGColor = UIColor.white.cgColor
+  public var borderColor: CGColor = UIColor.white.cgColor
   
   //MARK: - Change all button's color.
-  var btnPointColor: UIColor = .darkGray
+  public var btnPointColor: UIColor = .darkGray
   
-  override init(frame: CGRect) {
+  override public init(frame: CGRect) {
     super.init(frame: frame)
 
     // setupTheTouchPointView()
   }
 
-  required init?(coder _: NSCoder) {
+  required public init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -146,12 +146,6 @@ class TouchPointView: UIView {
       self.onDragPoint(recognizer: recognizer)
       self.pointCurrentState = .close
       
-//      animatePointsWhenHidden(completion: { end in
-//        if end {
-//          self.onDragPoint(recognizer: recognizer)
-//          self.pointCurrentState = .close
-//        }
-//      })
     } else {
       onDragPoint(recognizer: recognizer)
     }
@@ -474,7 +468,6 @@ class TouchPointView: UIView {
 
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction1() {
-    print("emptyFunction1")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction1()
       self.pointCurrentState = .close
@@ -483,7 +476,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction2() {
-    print("emptyFunction2")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction2()
       self.pointCurrentState = .close
@@ -492,7 +484,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction3() {
-    print("emptyFunction3 ")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction3()
       self.pointCurrentState = .close
@@ -500,7 +491,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction4() {
-    print("emptyFunction4")
     
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction4?()
@@ -509,7 +499,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction5() {
-    print("emptyFunction5")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction5?()
       self.pointCurrentState = .close
@@ -519,7 +508,6 @@ class TouchPointView: UIView {
   
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction6(){
-    print("emptyFunction6")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction6?()
       self.pointCurrentState = .close
@@ -527,7 +515,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction7(){
-    print("emptyFunction7")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction7?()
       self.pointCurrentState = .close
@@ -535,7 +522,6 @@ class TouchPointView: UIView {
   }
   //MARK: - Put which function you want to do for buttons.
   @objc func emptyFunction8(){
-    print("emptyFunction8")
     animatePointsWhenHidden { end in
       self.delegate?.emptyFunction8?()
       self.pointCurrentState = .close

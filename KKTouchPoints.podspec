@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KKTouchPoints'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A support button/buttons on view, it can drag and tap.'
 
 # This description is used to generate tags and improve search results.
