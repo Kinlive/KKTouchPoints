@@ -1,26 +1,24 @@
-pod-template
+KKTouchPoints
 ============
 
-An opinionated template for creating a Pod with the following features:
+## Requirements
 
-- Git as the source control management system
-- Clean folder structure
-- Project generation
-- MIT license
-- Testing as a standard
-- Turnkey access to Travis CI
-- Also supports Carthage
+iOS 10.0
+Swift 4.0
 
-## Getting started
+## Usage
 
-There are two reasons for wanting to work on this template, making your own or improving the one for everyone's. In both cases you will want to work with the ruby classes inside the `setup` folder, and the example base template that it works on from inside `template/ios/`. 
+1. Make a variable of UIView and inherit TouchPointsView.
+2. On your viewDidAppear initialize TouchPointsView, specify delegate, give current viewController for TouchPointsView.superViewController.
+3. On your viewDidAppear use function
+setupPoints(number: HowMuchPointsYouWantShow, pointsTitles: GiveWhatNameOfYourPointsTitle, pointColor: CenterPointsColor ,buttonsColor: AllButtonsColor ).
+4. Implementation with TouchPointViewDelegates require or optional functions.
 
-## Best practices
+## Notice
 
-The command `pod lib create` aims to be ran along with this guide: http://guides.cocoapods.org/making/using-pod-lib-create.html so any changes of flow should be updated there also.
-
-It is open to communal input, but adding new features, or new ideas are probably better off being discussed in an issue first. In general we try to think if an average Xcode user is going to use this feature or not, if it's unlikely is it a _very strongly_ encouraged best practice ( ala testing / CI. ) If it's something useful for saving a few minutes every deploy, or isn't easily documented in the guide it is likely to be denied in order to keep this project as simple as possible.
-
-## Requirements:
-
-- CocoaPods 1.0.0+
+Must declare a variable with currentPosition = CGPoint.zero, it's for delegates func currentLocation(currentPoint: CGPoint) specify the function parameter to your currentPosition, then when viewDidAppear() first initial the touchPoints
+if currentPosition == .zero {
+touchPoint.frame = CGRect(x: AnyWhere, y: AnyWhere, width: AnySize, height:  AnySize )
+} else {
+touchPoint.frame = CGRect(x: currentPosition.x, y: currentPosition.y, width: EqualTopSize , height: EqualTopSize)
+}
