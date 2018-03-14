@@ -11,7 +11,7 @@ Swift 4.0
 1. Make a variable of UIView and inherit TouchPointsView, declare a varialble of CGPoint.
 ```
 Example
-var touchPoints: TouchPointsView!
+var touchPoints: TouchPointView!
 var currentPosition = CGPoint.zero
 ```
 2. On your viewDidAppear initialize TouchPointsView, specify delegate, give current viewController for TouchPointsView.superViewController.
@@ -21,7 +21,7 @@ if currentPosition == .zero{
 //First entry.
 touchPoints = TouchPointView(frame: CGRect(x: view.frame.width - 150, y: view.frame.height / 3, width: view.frame.width / 8, height: view.frame.width / 8))
 } else {
-  touchPoint.frame = CGRect(x: currentPosition.x, y: currentPosition.y, width: EqualFirstEntrySize , height: EqualFirstEntrySize)
+  touchPoints.frame = CGRect(x: currentPosition.x, y: currentPosition.y, width: EqualFirstEntrySize , height: EqualFirstEntrySize)
 }
 touchPoints.delegate = self
 touchPoints.superViewController = self
