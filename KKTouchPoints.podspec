@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KKTouchPoints'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'A support button/buttons on view, it can drag and tap.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Kinlive/KKTouchPoints.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
   s.source_files = 'Pod/Classes/**/*'
   s.swift_version = '4.0'
